@@ -73,7 +73,7 @@ For Raspberry Pi 4B the `source_files` targets my folder which has the path `/ho
     
     1 directory, 8 files
 
-Keep note of the `*` in the source_files path. This essentially tells the script to copy over the files inside the folder. Omitting the `*` can copy the whole folder and can possibly result in a non functioning img file.
+Keep note of the `*` in the `source_files` path. This essentially tells the script to copy over the files inside the folder. Omitting the `*` can copy the whole folder as it is and can possibly result in a non functioning img file.
 
 Other variables can be left as it is, and on executing `./generate-img.sh` an img file is successfully created which is of `200 MB` and has the following partition table :
 
@@ -89,7 +89,7 @@ Other variables can be left as it is, and on executing `./generate-img.sh` an im
 
 ## Extras
 ### Flashing the generated img
-The generated image file can be flashed using the official Raspberry Pi Imager or via dd using the following command :
+The generated image file can be flashed using the official `Raspberry Pi Imager` or via `dd` using the following command :
 
     sudo dd if=generated.img of=<device path> bs=4M
 where `<device path>` is the path of your SD card interface (Example: `/dev/sdb`)
@@ -97,7 +97,7 @@ where `<device path>` is the path of your SD card interface (Example: `/dev/sdb`
 ### Mounting the boot in generated img
 Since the generated img contains only 1 partition, you can directly mount it using the following command :
 
-    sudo mount -v -o offset=1048576 -t vfat generated.img mnt
+    sudo mount -v -o offset=1048576 -t vfat generated.img /path/to/mount/point
 
 Where `1048576` is obtained by multiplying the start offset with 512. [`512 * 2048`]
 
