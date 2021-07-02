@@ -53,7 +53,7 @@ or
 
 and it should generate the img file in the same directory successfully.
 
-> Do note that the script has several sudo commands in plance and they
+> Do note that the script has several sudo commands in place and they
 > would require user authentication, so make sure to enter the password
 > when prompted.
 
